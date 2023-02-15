@@ -1,12 +1,6 @@
-import http from 'http'
-import { greet } from './greet'
+import Person from './person'
+import { Vector, Color } from './structures'
 
-http
-  .createServer((req, res: http.ServerResponse) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' })
-    res.write(greet('Bobae'))
-    res.end()
-  })
-  .listen(8080)
-
-console.log('Server running at port 8080')
+export default class MainClass {
+  constructor(public color: Color, public v: Vector, public person: Person) {}
+}
